@@ -1,0 +1,143 @@
+/* Overall Structure */
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+div.container {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+div.calculator {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color:plum;
+    width:400px;
+    height:600px;
+    border-radius: 20px;
+    border: 3px solid black;
+}
+
+div.grid {
+    height:100%;
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* Top row screen */
+div#screen {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+    height:20%;
+    margin-top: 10%;
+    background-color: white;
+    border-radius: 5px;
+    border: 3px solid black;
+}
+
+p#computation {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 5%;
+    margin-right: 10%;
+    font-size: 20px;
+}
+
+p#final-result {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 1%;
+    margin-right: 10%;
+    font-size: 25px;
+}
+/* Top row buttons */
+div.top-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    height:8%;
+    margin-top: 5%;
+}
+
+div#clear {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:45%;
+    margin-right: 6%;
+    border-radius: 3px;
+    border: 3px solid black;
+    background-color: lightskyblue;
+    font-weight: bold; 
+}
+
+div#clear:hover {
+    background-color:rgb(83, 183, 246);
+}
+
+div#delete {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:45%;
+    border-radius: 3px;
+    border: 3px solid black;
+    background-color: lightpink;
+    font-weight: bold;
+}
+
+div#delete:hover {
+    background-color:rgb(254, 130, 149);
+}
+
+/* Rows */ 
+div.row {
+    display:flex;
+    flex-direction: row;
+    height:7%;
+    width:100%;
+    margin-top: 10%;
+}
+
+p.row-buttons {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+    font-size: 25px;
+    font-weight: bold;
+    color:black;
+    background-color:white;
+    border: 3px solid black;
+    border-radius: 5px;
+    
+}
+
+p:hover {
+    background-color:lightgray;
+}
+
+p.row-buttons:nth-child(n+2) {
+    margin-left: 10%;
+}
+  
