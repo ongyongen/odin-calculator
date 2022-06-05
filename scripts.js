@@ -4,6 +4,7 @@ let opButtons = document.querySelectorAll('p.op-buttons')
 let clearButton = document.querySelector('div#clear')
 let deletePrevButton = document.querySelector('div#delete')
 
+let opArray = ['+', '-', '/', 'x', '=']
 let computation = []
 let computationVar = document.querySelector('p#computation')
 let result = document.querySelector('p#final-result')
@@ -30,7 +31,6 @@ function operate(op, num1, num2) {
 }
 
 function selectDigitButton(e) {
-    let opArray = ['+', '-', '/', 'x', '=']
     if(computation.length != 0 & 
         !opArray.includes(computation[computation.length-1]) &
         !opArray.includes(e.target.textContent)) {
@@ -38,12 +38,17 @@ function selectDigitButton(e) {
     } else {
         computation.push(e.target.textContent)
     }
-
-    console.log(computation)
     
     computationVar.textContent = computation.join(' ') // remove ',' when concat array
     if (!opArray.includes(e.target.textContent)) {
         result.textContent = computation[computation.length-1]
+    }
+
+    if(computation[1] == "/" & computation[2] == 0) {
+        alert("Cannot divide by zero!")
+        computation.pop()
+        result.textContent = ''
+        computationVar.textContent = computation.join(' ')
     }
 }
 
@@ -51,7 +56,6 @@ function selectOpButton(e) {
     computation.push(e.target.textContent)
     computationVar.textContent = computation.join(' ')
 
-    let opArray = ['+', '-', '/', 'x', '=']
     if (computation.length == 4) {
         let opSign = computation[1]
         switch(opSign) {
@@ -94,7 +98,6 @@ function selectDeletePrevButton(e) {
    computation.pop()
    computationVar.textContent = computation.join(' ')
 
-   let opArray = ['+', '-', '/', 'x', '=']
    if (opArray.includes(computation[computation.length-1])) {
        result.textContent = ' '
    } else {
