@@ -9,6 +9,26 @@ let computation = []
 let computationVar = document.querySelector('p#computation')
 let result = document.querySelector('p#final-result')
 
+const keybindMapping = {
+    "0" : 48,
+    "1" : 49,
+    "2" : 50,
+    "3" : 51,
+    "4" : 52,
+    "5" : 53,
+    "6" : 54,
+    "7" : 55,
+    "8" : 56,
+    "9" : 57,
+    "/" : 111,
+    "x" : 88,
+    "-" : 109,
+    "." : 110,
+    "=" : 13,
+    "clear" : 37,
+    "delete" : 8
+}
+
 
 function add(num1, num2) {
     return num1 + num2
@@ -115,4 +135,27 @@ opButtons.forEach((button) => {
 
 clearButton.addEventListener('click', selectClearButton)
 
+
 deletePrevButton.addEventListener('click', selectDeletePrevButton)
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 8) {
+        clearButton.click()
+    } else if (event.keyCode == 37) {
+        deletePrevButton.click()
+    }
+});
+
+
+/*
+document.addEventListener('keydown', function(event) {
+    for (const [key, value] of Object.entries(keybindMapping)) {
+        let keyboardMapping = document.getElementById(key)
+        if (event.keyCode == key) {
+            keyboardMapping.click()
+        }
+    }
+})
+
+
+*/
