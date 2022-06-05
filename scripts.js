@@ -20,10 +20,11 @@ const keybindMapping = {
     "7" : 55,
     "8" : 56,
     "9" : 57,
-    "/" : 111,
+    "+" : 78,
+    "/" : 191,
     "x" : 88,
-    "-" : 109,
-    "." : 110,
+    "-" : 189,
+    "." : 190,
     "=" : 13,
     "clear" : 37,
     "delete" : 8
@@ -102,7 +103,6 @@ function selectOpButton(e) {
         } else {
             computation = [res]
         }
-
         computationVar.textContent = computation.join(' ') // remove ',' when concat array
     }
 }
@@ -138,24 +138,25 @@ clearButton.addEventListener('click', selectClearButton)
 
 deletePrevButton.addEventListener('click', selectDeletePrevButton)
 
-document.addEventListener('keydown', function(event) {
-    if(event.keyCode == 8) {
-        clearButton.click()
-    } else if (event.keyCode == 37) {
-        deletePrevButton.click()
-    }
-});
 
 
 /*
 document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 8) {
+        clearButton.click()
+    } else if (event.keyCode == 49) {
+        test.click()
+    }
+});
+*/
+
+
+document.addEventListener('keydown', function(event) {
     for (const [key, value] of Object.entries(keybindMapping)) {
         let keyboardMapping = document.getElementById(key)
-        if (event.keyCode == key) {
+        if (event.keyCode == value) {
             keyboardMapping.click()
         }
     }
 })
 
-
-*/

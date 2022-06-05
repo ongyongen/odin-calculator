@@ -133,7 +133,8 @@ p.op-buttons {
     border-radius: 5px;
 }
 
-p:hover {
+p.digit-buttons:hover,
+p.op-buttons:hover {
     background-color:lightgray;
 }
 
